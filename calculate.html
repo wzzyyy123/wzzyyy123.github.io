@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <title>通货膨胀计算器</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+  <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+  <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+  <style type="text/css">
+    @font-face {
+      font-family: 'webfont';
+      font-display: swap;
+      src: url('./webfont_2sclewnk3bj/webfont.eot');
+      /* IE9*/
+      src: url('./webfont_2sclewnk3bj/webfont.eot?#iefix') format('embedded-opentype'),
+        /* IE6-IE8 */
+        url('./webfont_2sclewnk3bj/webfont.woff2') format('woff2'),
+        url('./webfont_2sclewnk3bj/webfont.woff') format('woff'),
+        /* chrome、firefox */
+        url('./webfont_2sclewnk3bj/webfont.ttf') format('truetype'),
+        /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+        url('./webfont_2sclewnk3bj/webfont.svg#after') format('svg');
+      /* iOS 4.1- */
+    }
+
+    .web-font {
+      font-family: "webfont" !important;
+      font-size: 32px;
+      font-style: normal;
+      -webkit-font-smoothing: antialiased;
+      -webkit-text-stroke-width: 0.2px;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  </style>
+
+  <style>
+    #bj {
+      background: linear-gradient(#fee, rgb(150, 201, 201)) repeat;
+      height: 400px;
+    }
+  </style>
+
+
+
+
+
+
+</head>
+
+<body>
+  <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"
+    integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+    crossorigin="anonymous"></script>
+  <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+    integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+    crossorigin="anonymous"></script>
+  <h1>通货膨胀影响投资收益计算器</h1>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">导航栏</a>
+      </div>
+
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="./关于.html">计算器说明页 <span class="sr-only">(current)</span></a></li>
+          <li><a href="#">关于通货膨胀</a></li>
+          <li><a href="#">项目比较实例</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">不同国家 <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">中国</a></li>
+              <li><a href="#">美国</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">日本</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">委内瑞拉</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">友友网站 <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">jelly's</a></li>
+              <li><a href="#">吴new</a></li>
+              <li><a href="#">龙！🐉</a></li>
+              <li role="separator" class="divider"></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="navbar-form navbar-left">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-default">搜索</button>
+        </form>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <button type="button" class="btn btn-primary">标准计算器</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <button type="button" class="btn btn-primary">逆置计算器</button>
+
+
+
+
+
+
+  <article id="bj" style="text-align:center;">
+    <div class="grid_3">
+      <i class="web-font" style="text-align:center;">该国通货膨胀情况介绍</i>
+      <br>
+      <i>1111111111111111111</i>
+    </div>
+    <div class="grid_6">
+      <form>
+        <fieldset>
+          <legend>标准计算器：</legend>
+          <div>
+            <b>&nbsp;&nbsp;&nbsp;&nbsp;初始投资金额:&nbsp;&nbsp;</b><input placeholder="0">
+          </div>
+          <br>
+          <div style="text-align:center">
+            <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;投资期数:&nbsp;&nbsp;</b><input
+              placeholder="0">
+          </div>
+          <br>
+          <div style="text-align:center">
+            <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;预计利率:&nbsp;&nbsp;</b><input
+              placeholder="0">
+          </div>
+          <br>
+          <div style="text-align:center">
+            <b>预计通货膨胀率:&nbsp;&nbsp;</b><input placeholder="3%">
+          </div>
+          <br>
+
+          <div class="checkbox">
+            <label>
+              <input type="checkbox"> 复利计算
+            </label>
+          </div>
+
+          <div class="form-group">
+            <div>
+              <button type="submit" class="btn btn-default" onclick="alert('计算结果')">计算</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </article>
+
+
+
+
+
+
+</body>
+
+</html>
